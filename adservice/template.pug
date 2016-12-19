@@ -1,0 +1,13 @@
+style
+    = css
+each pair in productPairs
+    div.products
+        each product in pair
+            a.product(href=product.url.domain + product.url.product)
+                div.thumbnail
+                    img(src=product.media.primary + '?width=220&height=220')
+                div.info
+                    div.price
+                        = product.prices.new.price_formatted
+                    div.title
+                        = product.title

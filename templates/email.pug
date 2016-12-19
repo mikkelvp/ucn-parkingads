@@ -1,0 +1,27 @@
+style
+    = css
+div.content
+    h1= 'Nearby parking lots'
+    img(src=staticMap)
+    div.lots
+        table.lot
+            thead
+                tr
+                    td= '#'
+                    td= 'Name'
+                    td= 'Distance'
+                    td= 'Free spots'
+                    td= 'Link'
+            tbody
+                each lot, index in parkingLots
+                    - var dist = Math.round(lot.distance * 1000)
+                    - var link = `http://maps.google.com/?q=${lot.latitude},${lot.longitude}`
+                    - var label = String.fromCharCode(65 + index)
+                            tr
+                                td= label
+                                td= lot.name
+                                td= dist + 'm'
+                                td= lot.free_count
+                                td
+                                    a(href=link)= 'Google maps'
+    != ads

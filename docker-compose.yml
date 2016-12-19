@@ -1,0 +1,50 @@
+version: '2'
+services:
+  server:
+    build: .
+    volumes:
+     - /usr/src/app
+    environment:
+      PROD: 'true'
+      PORT: 80
+    depends_on:
+     - redis
+    links:
+     - datadog
+     - adservice_server
+  redis:
+    image: redis
+    ports:
+    - 6379
+  adservice_server:    
+    build: 
+      context: ./adservice
+      dockerfile: Dockerfile_adservice
+    volumes:
+     - /usr/src/app
+    environment:
+      PROD: 'true'
+      PORT: 80
+    depends_on:
+     - redis
+  lb:
+    image: dockercloud/haproxy
+    ports:
+      - 80:80
+    links:
+      - server
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock 
+    depends_on:
+      - server
+  datadog:
+    image: datadog/docker-dd-agent
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - /proc/:/host/proc/:ro
+      - /sys/fs/cgroup/:/host/sys/fs/cgroup:ro
+      - ./redisdb.yaml:/etc/dd-agent/conf.d/redisdb.yaml
+    environment:
+      API_KEY: '<insert api key>'
+    links:
+      - redis

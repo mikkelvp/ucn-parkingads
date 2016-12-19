@@ -1,0 +1,28 @@
+{
+  "name": "ucn-parkingads_adservice",
+  "version": "1.0.0",
+  "description": "psu0216 2. semester project",
+  "main": "adservice.server.js",
+  "scripts": {
+    "test": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mikkelvp/ucn-parkingads.git"
+  },
+  "author": "Mikkel Vester Petersen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mikkelvp/ucn-parkingads/issues"
+  },
+  "homepage": "https://github.com/mikkelvp/ucn-parkingads#readme",
+  "dependencies": {
+    "cheerio": "^0.22.0",
+    "express": "^4.14.0",
+    "juice": "^3.0.1",
+    "pug": "^2.0.0-beta6",
+    "redis": "^2.6.2",
+    "request": "^2.74.0",
+    "request-promise-native": "^1.0.3"
+  }
+}

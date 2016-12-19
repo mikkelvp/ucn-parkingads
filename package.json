@@ -1,0 +1,54 @@
+{
+    "name": "ucn-parkingads",
+    "version": "1.0.0",
+    "description": "psu0216 2. semester project",
+    "main": "server.js",
+    "scripts": {
+        "test": ""
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mikkelvp/ucn-parkingads.git"
+    },
+    "author": "Mikkel Vester Petersen",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/mikkelvp/ucn-parkingads/issues"
+    },
+    "homepage": "https://github.com/mikkelvp/ucn-parkingads#readme",
+    "dependencies": {
+        "body-parser": "^1.15.2",
+        "bunyan": "^1.8.3",
+        "connect-datadog": "0.0.6",
+        "express": "^4.14.0",
+        "express-rate-limit": "^2.4.0",
+        "googlemaps": "^1.11.1",
+        "juice": "^4.0.0",
+        "node-dogstatsd": "0.0.6",
+        "nodemailer": "^2.6.0",
+        "nodemailer-sendgrid-transport": "^0.2.0",
+        "pug": "^2.0.0-beta6",
+        "rate-limit-redis": "^1.0.4",
+        "request": "^2.74.0",
+        "request-promise-native": "^1.0.3",
+        "turf-distance": "^3.0.12",
+        "turf-point": "^2.0.1"
+    },
+    "devDependencies": {
+        "babel-eslint": "^6.1.2",
+        "babel-core": "^6.14.0",
+        "babel-loader": "^6.2.5",
+        "babel-preset-es2015": "^6.14.0",
+        "babel-preset-react": "^6.11.1",
+        "css-loader": "^0.24.0",
+        "node-reset-scss": "^1.0.1",
+        "node-sass": "^3.8.0",
+        "react": "^15.3.1",
+        "react-dom": "^15.3.1",
+        "react-rangeslider": "^1.0.3",
+        "sass-loader": "^4.0.1",
+        "style-loader": "^0.13.1",
+        "webpack": "^1.13.2",
+        "webpack-dev-server": "^1.15.1"
+    }
+}

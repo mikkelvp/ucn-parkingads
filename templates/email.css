@@ -1,0 +1,21 @@
+table {
+    border-spacing: 0;
+    margin-top: 2em;
+    width: 100%;
+}
+
+thead {
+    font-weight: bold;
+}
+
+td {
+    padding: .4em;
+}
+
+tbody tr:nth-child(odd) {
+   background-color: #ccc;
+}
+
+.products {
+    margin-top: 2em;
+}

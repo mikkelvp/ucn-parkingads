@@ -1,0 +1,26 @@
+.products {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+}
+.info {
+    margin: 0 20px;
+    max-width: 180px;
+}
+.price {
+    color: #fd9627;
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: -1px;  
+}
+.title {
+    font-size: 13px;
+    color: #444750;
+    line-height: 125%;
+}
+a {
+    text-decoration: none;
+}

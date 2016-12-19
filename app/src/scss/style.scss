@@ -1,0 +1,100 @@
+@import "~node-reset-scss/scss/reset";
+@import "flex";
+
+$distance: 1.8em !default;
+$green: #27ae60 !default;
+$grey: #d3d3d3 !default;
+$blue: #2980B9 !default;
+$max-width: 800px !default;
+
+body {
+    background-color: $blue;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+}
+
+.container {
+    @include flexbox;
+    @include justify-content(center);
+    margin: auto;
+    max-width: 800px;
+    padding: $distance;
+    @media (max-width: $max-width) {
+        width: 100%;
+        padding: 0;
+    }
+}
+
+.get-parking-lots {
+    @include flexbox;
+    @include flex-direction(column);
+    width: 100%;
+    background-color: #fff;
+    padding: $distance;
+    h1 {
+        font-size: 1.7em;
+        font-weight: 700;
+        margin-bottom: $distance/2;
+        color: $blue;
+    }
+    .distance {
+        margin-bottom: $distance/2;
+        span {
+            color: $blue;
+            font-weight: bold;
+        }
+    }
+    .rangeslider-horizontal,
+    .rangeslider-horizontal .rangeslider__fill {
+        border-radius: 0;
+    }
+    @media (max-width: $max-width) {
+        padding: $distance/2 $distance/2 $distance $distance/2;
+        height: 80%;
+    }
+}
+
+.button {
+    position: relative;
+    vertical-align: top;
+    width: 100%;
+    height: 2.2em;
+    padding: 0;
+    font-size: 1.8em;
+    background: #fff;
+    color: #000;
+    text-align: center;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+    border: 2px solid #000;
+    &.green {
+        background: $green;
+        color: #fff;
+        border: 0;
+        border-bottom: 2px solid darken($green, 5%); // #219d55;
+        -webkit-box-shadow: inset 0 -2px darken($green, 5%);
+        box-shadow: inset 0 -2px darken($green, 5%);
+    }
+    &:disabled {
+        background: $grey;
+        color: #fff;
+        border: 0;
+        border-bottom: 2px solid darken($grey, 5%);
+        -webkit-box-shadow: inset 0 -2px darken($grey, 5%);
+        box-shadow: inset 0 -2px darken($grey, 5%);
+    }
+    &:active {
+        top: 1px;
+        outline: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+}
+
+input[type=email] {
+    width: 100%;
+    height: 3em;
+    padding: .3em;
+    position: relative;
+    font-size: 1em;
+    border: solid 2px #c9c9c9;
+    transition: border 0.3s;
+}
